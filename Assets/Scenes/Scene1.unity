@@ -1313,6 +1313,7 @@ GameObject:
   - component: {fileID: 1508095939}
   - component: {fileID: 1508095938}
   - component: {fileID: 1508095937}
+  - component: {fileID: 1508095940}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1386,6 +1387,27 @@ Transform:
   m_Father: {fileID: 1727322684}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -11.447, z: 0}
+--- !u!114 &1508095940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508095936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd29a894d12d4049a33a85af82ec38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasList:
+  - {fileID: 1288559641}
+  - {fileID: 1387295355}
+  - {fileID: 2104203547}
+  player_body: {fileID: 1727322684}
+  mouse_sensitive: 1000
+  speed: 10
+  player_movement: {fileID: 1727322686}
+  gravity: 0.98
 --- !u!1 &1518347837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e5fa1a4e69d188d44b96eaf850f58b42, type: 3}
@@ -1430,8 +1452,7 @@ GameObject:
   - component: {fileID: 1727322683}
   - component: {fileID: 1727322682}
   - component: {fileID: 1727322681}
-  - component: {fileID: 1727322680}
-  - component: {fileID: 1727322685}
+  - component: {fileID: 1727322686}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1439,19 +1460,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1727322680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727322679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58fd12d565d854857ae697bfb1cd9096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1727322679}
 --- !u!65 &1727322681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1531,22 +1539,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1727322685
-Rigidbody:
+--- !u!143 &1727322686
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727322679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Height: 0.99999994
+  m_Radius: 0.49999997
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1859883244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1917,6 +1927,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fa1a4e69d188d44b96eaf850f58b42, type: 3}
+--- !u!1 &2104203547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 404313214781649719, guid: d8aca015401ff4208a69a7c458d1c8f3, type: 3}
+  m_PrefabInstance: {fileID: 12930825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124162500
 GameObject:
   m_ObjectHideFlags: 0
