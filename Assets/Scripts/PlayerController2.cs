@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
-    // When anything in this list is activate, character rotation and movement will stop
-    [Header("GameObjects which stops cursor")]public List<GameObject> CanvasList;
+    // Try start
+    public List<GameObject> CanvasList;
+    // Try end
     public Transform player_body; //玩家角色
 
     //角色攝影機控制
@@ -31,6 +32,15 @@ public class PlayerController : MonoBehaviour
             CharacterRotation();
             CharcterMovement();
         }
+    }
+
+    private bool ListOpen() {
+        foreach (GameObject ListItem in CanvasList) {
+            if (ListItem.activeSelf) {
+                return true;
+            }
+        }
+        return false;
     }
 
     void CharacterRotation()
@@ -60,14 +70,5 @@ public class PlayerController : MonoBehaviour
         vertical_velocity.y -= gravity * Time.deltaTime;
 
         player_movement.Move(vertical_velocity * Time.deltaTime);
-    }
-
-    private bool ListOpen() {
-        foreach (GameObject ListItem in CanvasList) {
-            if (ListItem.activeSelf) {
-                return true;
-            }
-        }
-        return false;
     }
 }
