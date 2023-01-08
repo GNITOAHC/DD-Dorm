@@ -48,7 +48,7 @@ public class OrderMachine : MonoBehaviour
         });
 
         if (Vid5.activeSelf) {
-            Invoke(nameof(AfterVid5Active), 1f); // 8f
+            Invoke(nameof(AfterVid5Active), 8f); // 8f
         }
 
         PayImageX.GetComponent<Button>().onClick.AddListener(() => PayImage.SetActive(false));
@@ -59,7 +59,7 @@ public class OrderMachine : MonoBehaviour
         if (!gameManager.getOrderMachineAlready()) {
             Debug.Log("On Mouse Down");
             CanvasVid4n5.SetActive(true);
-            Invoke(nameof(ShowPurse), 1f); // 14f
+            Invoke(nameof(ShowPurse), 14f); // 14f
         } else if (gameManager.getOrderMachineAlready() && gameManager.getAtmAlready()){
             PayImage.SetActive(true);
             UsePurse2();
