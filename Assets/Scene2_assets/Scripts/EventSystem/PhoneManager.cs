@@ -33,6 +33,7 @@ public class PhoneManager : MonoBehaviour
         // Get Canvas_Vid2_phone_Icon
         Canvas_Vid2_phone_Icon.GetComponent<Button>().onClick.AddListener(() => {
             Canvas_Vid2.SetActive(true);
+            Invoke(nameof(activatebtn), 20f);
         });
 
         // Get Canvas_Vid1_X
@@ -69,5 +70,8 @@ public class PhoneManager : MonoBehaviour
             default:
                 break;
         }
+    }
+    private void activatebtn() {
+        Canvas_Vid2_BackToDorm.gameObject.SetActive(true);
     }
 }
