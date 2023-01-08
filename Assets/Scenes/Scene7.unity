@@ -207,6 +207,7 @@ MonoBehaviour:
   Canvas_Vid13: {fileID: 1109256304}
   Canvas_GameOver: {fileID: 1230000944}
   restart: {fileID: 1885348859}
+  DormMusic: {fileID: 1885847605}
 --- !u!1 &380825070
 GameObject:
   m_ObjectHideFlags: 0
