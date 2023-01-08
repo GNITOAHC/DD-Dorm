@@ -38,7 +38,7 @@ public class Scene4_GameManager : MonoBehaviour
     private void FindBBFunction() {
         CanvasVid8.SetActive(false);
         CanvasVid9.SetActive(true);
-        Invoke(nameof(CheckoutClue), 3f); // 18f
+        Invoke(nameof(CheckoutClue), 18f); // 18f
     }
     private void CheckoutClue() {
         CanvasCheckoutClue.SetActive(true);
