@@ -82,6 +82,9 @@ public class Scene4_GameManager : MonoBehaviour
         Debug.Log("JumpLastOS");
         CanvasLastOS.SetActive(true);
         Button NextScene = CanvasLastOS.transform.GetChild(2).GetComponent<Button>();
-        NextScene.onClick.AddListener(() => SceneManager.LoadScene("Scene5"));
+        NextScene.onClick.AddListener(() => {
+            //CanvasVid10.SetActive(false);
+            SceneManager.LoadScene("Scene5");
+        });
     }
 }
