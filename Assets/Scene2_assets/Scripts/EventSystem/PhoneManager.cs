@@ -18,6 +18,7 @@ public class PhoneManager : MonoBehaviour
     public Button Canvas_Vid2_phone_Icon;
     [Header("Back To Dorm Button from Canvas Vid 2")]
     public Button Canvas_Vid2_BackToDorm;
+    [Header("message")] public GameObject messageSound;
 
     // public Button PhoneIcon_Vid1, PhoneIcon_Vid2;
     // public Button Canvas_Vid1_X, Canvas_Vid2_BackToDorm;
@@ -25,6 +26,8 @@ public class PhoneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        messageSound.SetActive(true);
+        Invoke(nameof(DisableSound), 3f);
         // Get Canvas_Vid1_phone_Icon
         Canvas_Vid1_phone_Icon.GetComponent<Button>().onClick.AddListener(() => {
             Canvas_Vid1.SetActive(true);
@@ -60,9 +63,11 @@ public class PhoneManager : MonoBehaviour
         switch (x) {
             case 1: 
                 Canvas_Vid1_phone.SetActive(true);
+                messageSound.SetActive(true);
                 break;
             case 2: 
                 Canvas_Vid2_phone.SetActive(true);
+                messageSound.SetActive(true);
                 break;
             case 3: 
                 Canvas_NoVidPhone.SetActive(true);
@@ -70,8 +75,13 @@ public class PhoneManager : MonoBehaviour
             default:
                 break;
         }
+        Invoke(nameof(DisableSound), 3f);
     }
     private void activatebtn() {
         Canvas_Vid2_BackToDorm.gameObject.SetActive(true);
+    }
+    private void DisableSound() {
+        Debug.Log("Sound");
+        messageSound.SetActive(false);
     }
 }
